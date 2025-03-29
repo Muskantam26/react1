@@ -3,7 +3,7 @@
 const Cybrom=()=>{
     return(
 
-        <h1>this is cybrom class!</h1>
+        <h1>this is cybrom class!!!</h1>
     )
 }
 export default Cybrom;
