@@ -1,9 +1,10 @@
-// ===================================================Day2======================================================================================
 
 const Cybrom=()=>{
     return(
-
-        <h1>this is cybrom class!!!</h1>
+        <>
+        
+        <h1>welcome to Cybrom</h1>
+        </>
     )
 }
-export default Cybrom;
+export default Cybrom
