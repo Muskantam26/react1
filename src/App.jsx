@@ -523,29 +523,51 @@ Passenger vehicles
 }
 export default App; */}
 
-const App=()=>{
-  const Display=(e)=>{
+// const App=()=>{
+//   const Display=(e)=>{
     // alert("this is event in react js}")
     // alert(`my name is ${me}`)
 
-    alert(e.type)
-    alert("type:"  +e.type+ "Name: " +e.target.name+" value:"  +e.target.value)
+    // alert(e.type)
+    // alert("type:"  +e.type+ "Name: " +e.target.name+" value:"  +e.target.value)
+
+
+  // }
+ 
+ 
+// return(
+// <>
+
+// <h1>welcom</h1>
+{/* <button onClick={Display}>click me</button> */}
+{/* <button name="btn1" value="mybtn" onClick={Display}>click me</button> */}
+
+
+// </>
+
+// )
+// }
+
+// export default App;
+
+
+
+
+const Fun=()=>{
+
+  const Display=(nm, e)=>{
+      console.log(e)
+      alert(e.type)
+      alert("type:"+nm  +e.type+ "Name: " +e.target.name+" value:"  +e.target.value)
+
 
 
   }
- 
- 
-return(
-<>
-
-<h1>welcom</h1>
-{/* <button onClick={Display}>click me</button> */}
-<button name="btn1" value="mybtn" onClick={Display}>click me</button>
-
-
-</>
-
-)
+  return(
+      <>
+      Enter name: <input type="text" name="txt" id="" value="muskan" onClick={Display} />
+      <button name="btn1" value="mybtn" onClick={(e)=>{Display("muskan",e)}}>click me</button>
+      </>
+  )
 }
-
-export default App;
+export default Fun
