@@ -1,9 +1,29 @@
 body{
     color: blue;
     background-color: brown;
+    /* background-image: url("https://th.bing.com/th/id/OIP.z2wLHyWkSQFdxYg5VfDoYAHaEs?w=1000&h=633&rs=1&pid=ImgDetMai"); */
+   background-color: aqua;
 }
 
 .hey
 {
     color: red;
+}
+.cardd{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 10%;
+    
+   
+}
+img{
+    width: 100%;
+    
+    
+}
+.divv{
+    background-color: rgb(19, 125, 125);
+    
 }
