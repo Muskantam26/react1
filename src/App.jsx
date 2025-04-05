@@ -550,7 +550,7 @@ export default App; */}
 
 // export default App;
 
-
+//===============================================================object============================================================================
 
 
 const Fun=()=>{
@@ -570,4 +570,24 @@ const Fun=()=>{
       </>
   )
 }
-export default Fun
+export default Fun 
+
+//================================================event handling=====Hooks=============================================
+
+const Form=()=>{
+  return
+(
+  <>
+  <h1>Application form</h1>
+  Name: <input type="text" />
+  <br />
+  City: <input type="text" />
+  <br />
+  <button>Submit</button>
+  <br />
+
+
+
+  </>
+)
+}
