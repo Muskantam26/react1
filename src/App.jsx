@@ -553,41 +553,150 @@ export default App; */}
 //===============================================================object============================================================================
 
 
-const Fun=()=>{
+// const Fun=()=>{
 
-  const Display=(nm, e)=>{
-      console.log(e)
-      alert(e.type)
-      alert("type:"+nm  +e.type+ "Name: " +e.target.name+" value:"  +e.target.value)
+//   const Display=(nm, e)=>{
+//       console.log(e)
+//       alert(e.type)
+//       alert("type:"+nm  +e.type+ "Name: " +e.target.name+" value:"  +e.target.value)
 
 
 
-  }
-  return(
-      <>
-      Enter name: <input type="text" name="txt" id="" value="muskan" onClick={Display} />
-      <button name="btn1" value="mybtn" onClick={(e)=>{Display("muskan",e)}}>click me</button>
-      </>
-  )
-}
-export default Fun 
+//   }
+//   return(
+//       <>
+//       Enter name: <input type="text" name="txt" id="" value="muskan" onClick={Display} />
+//       <button name="btn1" value="mybtn" onClick={(e)=>{Display("muskan",e)}}>click me</button>
+//       </>
+//   )
+// }
+// export default Fun 
 
 //================================================event handling=====Hooks=============================================
 
-const Form=()=>{
-  return
-(
-  <>
-  <h1>Application form</h1>
-  Name: <input type="text" />
-  <br />
-  City: <input type="text" />
-  <br />
-  <button>Submit</button>
-  <br />
+// const Form=()=>{
+//   return
+// (
+//   <>
+//   <h1>Application form</h1>
+//   Name: <input type="text" />
+//   <br />
+//   City: <input type="text" />
+//   <br />
+//   <button>Submit</button>
+//   <br />
 
 
 
-  </>
-)
+//   </> 
+// )
+// }
+
+//======================================Hook======USE STATE===================================================================
+
+// import { useState } from "react"
+
+// const App=()=>{
+//   const[color,setColor]=useState("red");   //initial state
+
+//   return(
+//     <>
+//   <h1>Welcome to my app{color}</h1>  
+//   <button onClick={()=>{setColor("blue")}} >click here</button>
+//   <button onClick={()=>{setColor("green")}}>click green</button>
+//   <button onClick={()=>{setColor("pink")}}>click pink</button>
+//   <button onClick={()=>{setColor("black")}}>click black</button>
+    
+//     </>
+//   )
+// }
+// export default App;
+
+// import { useState } from "react"
+// import { Button } from "react-bootstrap";
+// const App=()=>{
+//   const[cnt, setCnt]=useState(0);
+//   const mydec=()=>{
+//     if(cnt<=0)
+//     {
+//       alert("not less then zero");
+//     }
+//     else{
+//       setCnt(cnt-1);
+//     }
+//   }
+//   return
+// (
+//   <>
+//   <h1 align="center">My counter App</h1>
+//   <div style={{border:"2px solid green", padding:"28px", borderRadius:"30px", backgroundColor:"lightgreen", width:"150px", margin:"auto"}}>
+
+// <h1>My count : {cnt}</h1>
+// <Button onClick={()=>{setCnt(cnt+1)}}>Increment</Button>
+// <Button onClick={mydec}>Decrement</Button>
+// <Button onClick={()=>{setCnt(0)}}>Reset</Button>
+
+
+//   </div>
+//   </>
+// )
+// }
+// export default App;
+
+// import { useState } from "react";
+// import { Button } from "react-bootstrap";
+// const App=()=>{
+//   const [cnt,setName]=useState(0);
+//   const mydec=()=>{
+//     if(cnt<=0){
+//       alert("Not less than zero!");
+//     }
+//     else{
+//       setName(cnt-1);
+//     }
+//   }
+//   return (
+//     <>
+//       <h1 align="center">My Counter App</h1>
+//       <div
+//         style={{
+//           border: "2px soild black",
+//           padding: "20px",
+//           borderRadius: "30px",
+//           backgroundColor: "lightGreen",
+//           width: "300px",
+//           margin: "auto",
+//         }}
+//       >
+//         <h1>My Count :{cnt}</h1>
+//         <button style={{color:"red"}} onClick={()=>{setName(cnt+1)}}>Incerment</button>
+//         <button onClick={mydec}>Decerment</button>
+//         <button onClick={()=>{setName(0)}}>Reset</button>
+//       </div>
+//     </>
+//   );
+// }
+// export default App;
+
+
+//=====================================useEffect hook=================================================================================
+
+import {useState, useEffect } from "react";
+
+const App=()=>{
+
+  const[count,setCount]=useState(0);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+    setCount(count+1);
+    },4000);
+  });
+  return(
+    <>
+    <h1>Welcome : {count}</h1>
+    
+    </>
+  )
 }
+export default App;
