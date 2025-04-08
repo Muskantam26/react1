@@ -681,22 +681,124 @@ export default App; */}
 
 //=====================================useEffect hook=================================================================================
 
-import {useState, useEffect } from "react";
+// import {useState, useEffect } from "react";
 
-const App=()=>{
+// const App=()=>{
 
-  const[count,setCount]=useState(0);
+//   const[count,setCount]=useState(0);
 
-  useEffect(()=>{
-    setTimeout(()=>{
-    setCount(count+1);
-    },4000);
-  });
-  return(
+//   useEffect(()=>{
+//     setTimeout(()=>{
+//     setCount(count+1);
+//     },4000);
+//   });
+//   return(
+//     <>
+//     <h1>Welcome : {count}</h1>
+    
+//     </>
+//   )
+// }
+// export default App;
+//=======================================================non dependancy===========================================================
+// import {useState, useEffect } from "react";
+
+// const App=()=>{
+
+//   const[count,setCount]=useState(0);
+
+//   useEffect(()=>{
+//     setTimeout(()=>{
+//     setCount(count+1);
+//     },4000);
+//   } ,[]);
+//   return(
+//     <>
+//     <h1>Welcome : {count}</h1>
+    
+//     </>
+//   )
+// }
+// export default App;
+
+//================================================props state=============================================================================
+
+// import {useState, useEffect } from "react";
+
+// const App=()=>{
+
+//   const[count,setCount]=useState(0);
+//   const [multi, setMulti]=useState(0);
+
+//   useEffect(()=>{
+//    setMulti(count*2)
+//   },[count])
+//   return(
+//     <>
+//     <h1>Welcome : {count}</h1>
+//     <h1>Welcome multi: {multi}</h1>
+//     <button onClick={()=>{setCount(count+1)}}>click here</button>
+    
+//     </>
+//   )
+// }
+// export default App;
+
+//=================================================Application form===========================================================================
+// import { useState} from "react";
+// const App=()=>{
+//   const [name, setName]=useState("")
+//   const [city, setCity]=useState("")
+//   const handlebutton=()=>{
+
+//     alert(`My name : ${name}  City : ${city}`)
+//   }
+// return(
+//   <>
+//   <h1>Application form</h1>
+
+//   name: <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}} />
+//   <br />
+//   city: <input type="text" value={city} onChange={(e)=>{setCity(e.target.value)}} />
+//   <br />
+//   <button onClick={handlebutton}>click</button>
+  
+//   </>
+// )
+
+// }
+// export default App;
+
+//=============================spread operator==========================================================================
+
+import { useState } from "react";
+const Spp=()=>{
+const [input, setInput]=useState({});
+
+
+const handleInput=(e)=>{
+let name=e.target.name;
+let value=e.target.value;
+setInput(values=>({...values, [name]: value}))
+console.log(input)
+}
+  return (
     <>
-    <h1>Welcome : {count}</h1>
+    <h1>Application form</h1>
+
+    name: <input type="text" name="name" onChange={handleInput}/>
+<br />
+    rollno: <input type="text" name="rollno" onChange={handleInput}/>
+<br />
+    city: <input type="text" name="city" onChange={handleInput} />
+<br />
+    number: <input type="text" name="number" onChange={handleInput} />
+    <br />
+
+    <button>submit</button>
     
     </>
   )
+
 }
-export default App;
+export default Spp;
