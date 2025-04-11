@@ -771,34 +771,67 @@ export default App; */}
 
 //=============================spread operator==========================================================================
 
-import { useState } from "react";
-const Spp=()=>{
-const [input, setInput]=useState({});
+// import { useState } from "react";
+// const Spp=()=>{
+// const [input, setInput]=useState({});
 
 
-const handleInput=(e)=>{
-let name=e.target.name;
-let value=e.target.value;
-setInput(values=>({...values, [name]: value}))
-console.log(input)
-}
-  return (
-    <>
-    <h1>Application form</h1>
+// const handleInput=(e)=>{
+// let name=e.target.name;
+// let value=e.target.value;
+// setInput(values=>({...values, [name]: value}))
+// console.log(input)
+// }
+//   return (
+//     <>
+//     <h1>Application form</h1>
 
-    name: <input type="text" name="name" onChange={handleInput}/>
-<br />
-    rollno: <input type="text" name="rollno" onChange={handleInput}/>
-<br />
-    city: <input type="text" name="city" onChange={handleInput} />
-<br />
-    number: <input type="text" name="number" onChange={handleInput} />
-    <br />
+//     name: <input type="text" name="name" onChange={handleInput}/>
+// <br />
+//     rollno: <input type="text" name="rollno" onChange={handleInput}/>
+// <br />
+//     city: <input type="text" name="city" onChange={handleInput} />
+// <br />
+//     number: <input type="text" name="number" onChange={handleInput} />
+//     <br />
 
-    <button>submit</button>
+//     <button>submit</button>
     
+//     </>
+//   )
+
+// }
+// export default Spp;
+
+
+//==========================CRUD===========================================
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import Layout from "./Layout";
+import Home from "./Home";
+import Display from "./Display";
+import Insert from "./Insert";
+const App=()=>{
+  return(
+    <>
+    <BrowserRouter>
+    <Routes>
+
+      <Route path="/" element={<Layout/>}>
+      <Route index element={<Home/>}/>
+      <Route path="home" element={<Home/>}/>
+      <Route path="insert" element={<Insert/>}/>
+      <Route path="display" element={<Display/>}/>
+
+      </Route>
+    </Routes>
+    
+    </BrowserRouter>
+
+
     </>
   )
-
 }
-export default Spp;
+
+export default App;
