@@ -806,32 +806,85 @@ export default App; */}
 
 //==========================CRUD===========================================
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React from "react";
-import Layout from "./Layout";
-import Home from "./Home";
-import Display from "./Display";
-import Insert from "./Insert";
-const App=()=>{
-  return(
-    <>
-    <BrowserRouter>
-    <Routes>
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import React from "react";
+// import Layout from "./Layout";
+// import Home from "./Home";
+// import Display from "./Display";
+// import Insert from "./Insert";
+// const App=()=>{
+//   return(
+//     <>
+//     <BrowserRouter>
+//     <Routes>
 
-      <Route path="/" element={<Layout/>}>
-      <Route index element={<Home/>}/>
-      <Route path="home" element={<Home/>}/>
-      <Route path="insert" element={<Insert/>}/>
-      <Route path="display" element={<Display/>}/>
+//       <Route path="/" element={<Layout/>}>
+//       <Route index element={<Home/>}/>
+//       <Route path="home" element={<Home/>}/>
+//       <Route path="insert" element={<Insert/>}/>
+//       <Route path="display" element={<Display/>}/>
 
-      </Route>
-    </Routes>
+//       </Route>
+//     </Routes>
     
-    </BrowserRouter>
+//     </BrowserRouter>
 
 
+//     </>
+//   )
+// }
+
+// export default App;
+
+
+import myimg from "./images/img.jpg";
+import { BrowserRouter,Routes,Route ,Link} from "react-router-dom";
+import Layout from "./comoponents/Layout";
+import Home from "./comoponents/Home";
+import Insert from "./comoponents/Insert";
+import Display from "./comoponents/Display";
+
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
+const App=()=>{
+    return(
+      <>
+      <BrowserRouter>
+       
+        <Navbar bg="primary" data-bs-theme="dark" expand="lg">
+          <Container>
+            <Navbar.Brand as={Link} to="/home">REACT</Navbar.Brand>     
+            <Nav className="me-auto">
+              <Nav.Link as={Link} to="/home">Home</Nav.Link>
+              <Nav.Link as={Link} to="/insert">Insert</Nav.Link>
+              <Nav.Link as={Link} to="/display">Display</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
+
+        
+        <Routes>
+         <Route path="/" element={<Layout/>}>
+         <Route path="home" element={<Home/>}/>
+         <Route path="insert" element={<Insert/>}/>
+         <Route path="display" element={<Display/>}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
+      <img src={myimg} alt="" style={{width:"100%", height:"30vh"}} />
+
+       {/* <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> */}
+      <footer>
+     <div style={{backgroundColor:"blue", width:"100%", height:"30vh"}}>
+      <h1>www.compony.com</h1>
+
+     </div>
+
+      </footer>
     </>
-  )
+    )
 }
-
 export default App;
