@@ -6,6 +6,8 @@
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
 
+import Cybrom1 from "./Cybrom1";
+
 // const App=()=>{
 // return(
 
@@ -837,54 +839,146 @@ export default App; */}
 // export default App;
 
 
-import myimg from "./images/img.jpg";
-import { BrowserRouter,Routes,Route ,Link} from "react-router-dom";
-import Layout from "./comoponents/Layout";
-import Home from "./comoponents/Home";
-import Insert from "./comoponents/Insert";
-import Display from "./comoponents/Display";
+// import myimg from "./images/img.jpg";
+// import { BrowserRouter,Routes,Route ,Link} from "react-router-dom";
+// import Layout from "./comoponents/Layout";
+// import Home from "./comoponents/Home";
+// import Insert from "./comoponents/Insert";
+// import Display from "./comoponents/Display";
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+// import Container from 'react-bootstrap/Container';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
 
-const App=()=>{
-    return(
-      <>
-      <BrowserRouter>
+// const App=()=>{
+//     return(
+//       <>
+//       <BrowserRouter>
        
-        <Navbar bg="primary" data-bs-theme="dark" expand="lg">
-          <Container>
-            <Navbar.Brand as={Link} to="/home">REACT</Navbar.Brand>     
-            <Nav className="me-auto">
-              <Nav.Link as={Link} to="/home">Home</Nav.Link>
-              <Nav.Link as={Link} to="/insert">Insert</Nav.Link>
-              <Nav.Link as={Link} to="/display">Display</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
-
+//         <Navbar bg="primary" data-bs-theme="dark" expand="lg">
+//           <Container>
+//             <Navbar.Brand as={Link} to="/home">REACT</Navbar.Brand>     
+//             <Nav className="me-auto">
+//               <Nav.Link as={Link} to="/home">Home</Nav.Link>
+//               <Nav.Link as={Link} to="/insert">Insert</Nav.Link>
+//               <Nav.Link as={Link} to="/display">Display</Nav.Link>
+//             </Nav>
+//           </Container>
+//         </Navbar>
+//         <img src={myimg} alt="" style={{width:"100%", height:"30vh"}} />
         
-        <Routes>
-         <Route path="/" element={<Layout/>}>
-         <Route path="home" element={<Home/>}/>
-         <Route path="insert" element={<Insert/>}/>
-         <Route path="display" element={<Display/>}/>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+//         <Routes>
+//          <Route path="/" element={<Layout/>}>
+//          <Route path="home" element={<Home/>}/>
+//          <Route path="insert" element={<Insert/>}/>
+//          <Route path="display" element={<Display/>}/>
+//           </Route>
+//         </Routes>
+//       </BrowserRouter>
+// <br />
+      
 
-      <img src={myimg} alt="" style={{width:"100%", height:"30vh"}} />
+//        {/* <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> */}
+//       <footer>
+//      <div style={{backgroundColor:"pink", width:"100%", height:"30vh"}}>
+//       <h1>www.compony.com</h1>
 
-       {/* <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> */}
-      <footer>
-     <div style={{backgroundColor:"blue", width:"100%", height:"30vh"}}>
-      <h1>www.compony.com</h1>
+//      </div>
 
-     </div>
+//       </footer>
+//     </>
+//     )
+// }
+// export default App;
 
-      </footer>
+
+
+// import Cybrom1 from "./Cybrom1";
+// import {useState,createContext} from  "react";
+
+// const myContext=createContext();
+// const App=()=>{
+// const [name,setName]=useState("Muskan");
+// return(
+//   <>
+//    <h1>Welcome..{name}</h1>
+
+//    <myContext.Provider value={{name}}>
+//     <Cybrom1/>
+//    </myContext.Provider>
+
+  
+//   </>
+// )
+
+
+
+// }
+// export default App;
+// export {myContext}
+
+// import Comp1 from "./Cybrom1";
+// import { useState, createContext } from "react";
+// const myContext=createContext();
+// const App=()=>{
+//   const [user,setUser]=useState("ishika");
+//   return(
+//     <>
+    
+//     <h1>Welcome  to cybrom :{user}</h1>
+//     <button onClick={()=>{setUser("varsha")}}>click</button>
+//     <myContext.Provider value={{user,setUser}}>
+//   <Comp1/>
+//     </myContext.Provider>
+//     </>
+//   )
+// }
+// export default App;
+// export{myContext};
+
+
+
+// import Cybrom from "./Cybrom1";
+// const App=()=>{
+//   return(
+//     <>
+
+//     <h1>Welcome...</h1>
+//     <Cybrom>
+
+//       hello react...
+//     </Cybrom>
+//     </>
+//   )
+// }
+// export default App;
+
+
+
+// import Cybrom from "./Cybrom1"
+// const App=()=>{
+//   return(
+//     <>
+//     <h1>Wecome!!</h1>
+//     <Cybrom/>
+//     </>
+//   )
+// }
+// export default App;
+
+
+
+import AuthApp from "./AuthApp";
+import UnAuthApp from "./UnAuthApp";
+import { useContext } from "react";
+import { myContext } from "./LoginContext";
+const App=()=>{
+  const {user}= useContext{myContext};
+  return(
+    <>
+    <h1>Login system!!</h1>
+    {user.auth ? <AuthApp/>: <UnAuthApp/>}
     </>
-    )
+  )
 }
 export default App;
