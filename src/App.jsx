@@ -968,16 +968,210 @@ export default App; */}
 
 
 
-import AuthApp from "./AuthApp";
-import UnAuthApp from "./UnAuthApp";
-import { useContext } from "react";
-import { myContext } from "./LoginContext";
+// import AuthApp from "./AuthApp";
+// import UnAuthApp from "./UnAuthApp";
+// import { useContext } from "react";
+// import { myContext } from "./LoginContext";
+// const App=()=>{
+//   const {user}= useContext(myContext);
+//   return(
+//     <>
+//     <h1>Login system!!</h1>
+//     {user.auth ? <AuthApp/>: <UnAuthApp/>}
+//     </>
+//   )
+// }
+// export default App;
+
+
+
+//===================useref hpok======================================
+
+
+// import { useRef } from "react";
+
+// const App=()=>{
+//   const myref= useRef();
+//   console.log(myref);
+
+//   const myDisplay=()=>{
+// myref.current.style.border="3px solid red";
+// myref.current.style.width="200px";
+// myref.current.style.backgroundColor="orange";
+// myref.current.style.borderRadius="20px";
+// myref.current.style.padding="30px";
+//   }
+//   return(
+//     <>
+//     <h1>hello</h1>
+//     <button onClick={myDisplay}>Click </button>
+//     <div ref={myref}>
+// Using useref Hook
+//     </div>
+//     </>
+//   )
+// }
+// export default App;
+
+
+
+
+// import { useRef } from "react";
+// const App=()=>{
+//   const myRef=useRef("");
+
+// const display=()=>{
+//   myRef.current.innerHTML="We learn UseRef hook in react";
+// }
+//   return(
+//     <>
+//     <h1 ref={myRef}>welcome</h1>
+//     <button onClick={display}>Click here</button>
+//     </>
+//   )
+// }
+// export default App;
+
+
+// import { useEffect, useRef, useState } from "react";
+//  const App=()=>{
+
+//   const [name, setName] = useState(" ");
+
+//   const myref = useRef(0);
+//   useEffect(()=>{
+//     myref.current+=1;
+//   })
+//   return(
+//     <>
+//     enter name : <input type="text" value={name}  onChange={(e)=>{setName(e.target.value)}}/>
+//     <h1>Rendering count : {myref.current} </h1>
+//     </>
+//   )
+//  }
+//  export default App;
+
+// import { useRef } from "react";
+// const App=()=>{
+//   const myref= useRef();
+//   const myref1= useRef();
+//   const myref2 = useRef();
+//   const myDisplay=()=>{
+//      myref.current.style.border="3px solid yellow";
+//      myref.current.style.width="200px";
+//      myref.current.style.backgroundColor="orange";
+//      myref.current.style.borderRadius="20px";
+//      myref.current.style.padding="30px";
+//        }
+//      const  myDisplay2=()=>{
+//         myref2.current.innerHTML="Welcome to cybrom";
+//        }
+//     const   myDisplay3=()=>{
+//         myref1.current.style.border="3px solid red";
+//         myref1.current.style.width="150px";
+//         myref1.current.style.height="200px"
+//         myref1.current.style.borderRadius="50%";
+
+//        }
+//   return(
+//     <>
+//     <div ref={myref}> <div ref={myref1}> <h1 ref={myref2}></h1></div></div>
+//     <button onClick={myDisplay}>click1</button>
+//     <button onClick={myDisplay2}>click2</button>
+//     <button onClick={myDisplay3}>click3</button>
+//     </>
+//   )
+// }
+// export default  App;
+
+
+
+
+//=====================================================use reducer hook==============================================
+
+// import { useReducer } from "react";
+// const App=()=>{
+//   const reducerMethod=(state, action)=>{
+//    switch(action){
+//     case "Increment":
+//       return state+1;
+//       case "Decrement":
+//         return state-1;
+//         default:
+//           return state;
+//    }
+//   }
+
+
+//   const [count, dispatch] = useReducer(reducerMethod, 0);
+//   return(
+//     <>
+//     <h1>welcome to react!!</h1>
+//     <button onClick={()=>{dispatch("Increment")}}>Increment</button>
+//     <h1>Count : {count} </h1>
+//     <button onClick={()=>{dispatch("Decrement")}}>Decrement</button>
+//     </>
+//   )
+// }
+// export default App;
+
+
+// import { useReducer } from "react";
+
+// const App=()=>{
+//   const myReducer=( state , action)=>{
+
+//     switch(action)
+//     {
+//       case "GREEN":
+//         return state ="green";
+//         case "RED":
+//           return state = "red";
+//           case "BLUE":
+//             return state = "blue";
+//             default:
+//               return state;
+//     }
+//   }
+
+
+//   const [color, dispatch]= useReducer (myReducer, "yellow");
+// return(
+//   <>
+//   <h1>welcome</h1>
+//   <button onClick={()=>{dispatch("RED")}}>REd</button>
+//   <button onClick={()=>{dispatch("GREEN")}}>GREEN</button>
+//   <button onClick={()=>{dispatch("BLUE")}}>BLUE</button>
+//   <div style={{width:"300px", height:"200px", backgroundColor:color}}></div>
+//   </>
+// )
+// }
+// export default App;
+
+
+//========================================use memo hook========================================================================
+
+
+import { useMemo, useState } from "react";
+ 
 const App=()=>{
-  const {user}= useContext{myContext};
+
+  const [add, setAdd]= useState(0);
+  const [sub, setSub]= useState(100);
+  const multiply = useMemo(()=>{
+    console.log("********");
+    return add*2;
+  },[add])
+
+  
   return(
     <>
-    <h1>Login system!!</h1>
-    {user.auth ? <AuthApp/>: <UnAuthApp/>}
+    <h1>Welcome to react class!</h1>
+    <h1>Multiplication : {multiply}</h1>
+    <button onClick={()=>{setAdd(add+1)}}>Increment</button>
+    <h2>Increment : {add}</h2>
+    <button onClick={()=>{setSub(sub-1)}}>Decrement</button>
+    <h2>Decrement : {sub}</h2>
     </>
   )
 }
