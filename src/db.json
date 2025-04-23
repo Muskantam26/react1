@@ -1,5 +1,5 @@
 {
-  "employe": [
+  "employee": [
     {
       "name": "muskan",
       "empno": "1223",
@@ -12,6 +12,13 @@
       "empno": "1231",
       "name": "Muskan Tamrakar",
       "designation": "dev",
+      "salary": "300000"
+    },
+    {
+      "id": "c9fe",
+      "empno": "1231",
+      "name": "Muskan Tamrakar",
+      "designation": "developer",
       "salary": "300000"
     }
   ]
